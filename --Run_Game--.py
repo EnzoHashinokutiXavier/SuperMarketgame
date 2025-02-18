@@ -1,0 +1,3 @@
+import SuperMarket
+
+SuperMarket.supermarket()

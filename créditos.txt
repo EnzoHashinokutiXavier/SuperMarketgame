@@ -1,0 +1,4 @@
+Jogo feito inteiramente por Enzo Hashinokuti Xavier
+Com auxilio da IA 'Aria' para correcao de erros e estudo de funcoes
+codigo aberto
+jogo feito para teste e estudos
