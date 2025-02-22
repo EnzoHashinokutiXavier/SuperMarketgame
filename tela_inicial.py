@@ -6,7 +6,7 @@ import os
 
 
 def telainicial():
-    print('[1]Novo jogo\n[2]Carregar salvamento\n[3]Créditos\n[4]Sair\n')
+    print('[1]Novo jogo\n[2]Carregar salvamento\n[3]Créditos\n[4]Sair')
     ti_opc = ''
     x = False
     while not x:
@@ -14,7 +14,7 @@ def telainicial():
         if ti_opc in ['1', '2', '3', '4']:
             x = True
     if ti_opc == '1':
-        print('Deseja jogar o tutorial ?\n[1]Jogar tutorial\n[2]Pular tutorial\n[3]Voltar\n')
+        print('Deseja jogar o tutorial ?\n[1]Jogar tutorial\n[2]Pular tutorial\n[3]Voltar')
         x = False
         nj_opc = ''
         while not x:
@@ -56,8 +56,7 @@ def telainicial():
                 with open('dados_game.py', 'w') as criar:
                     criar.write(conteudo)
                     os.fsync(criar.fileno())
-
-        print('[1]Salvamento {}\n[2]Salvamento {}\n[3]Salvamento {}\n[4]Salvamento {}\n[5]Voltar\n'
+        print('[1]Salvamento {}\n[2]Salvamento {}\n[3]Salvamento {}\n[4]Salvamento {}\n[5]Voltar'
               .format(slot1[0], slot2[0], slot3[0], slot4[0]))
         x = False
         cj_opc = ''
@@ -65,7 +64,6 @@ def telainicial():
             cj_opc = input('').strip()
             if cj_opc in ['1', '2', '3', '4', '5']:
                 x = True
-
         if cj_opc in ['1', '2', '3', '4']:
             carregar_dados(int(cj_opc) - 1)
         elif cj_opc == '5':
