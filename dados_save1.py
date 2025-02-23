@@ -1,5 +1,5 @@
-slot1 = ['de Enzo']
-nome = 'Enzo'
+slot1 = ['vazio']
+nome = 'vazio'
 
 dia = 1
 dinheiro = 2000

@@ -62,17 +62,17 @@ def corredores():
             except ValueError:
                 print("Por favor, digite um número válido.")
         if a % 2 != 0:
-            d = a // 2
-            copiaesp1 = aresp[d]
-            copiatipo1 = artipo[d]
-            copiaproduto1 = arproduto[d]
-            copiaquant1 = arquant[d]
+            d = int(a // 2)
+            copiaesp1 = str(aresp[d])
+            copiatipo1 = str(artipo[d])
+            copiaproduto1 = str(arproduto[d])
+            copiaquant1 = int(arquant[d])
         elif a % 2 == 0:
-            d = (a/2) - 1
-            copiaesp1 = aresp2[d]
-            copiatipo1 = artipo2[d]
-            copiaproduto1 = arproduto2[d]
-            copiaquant1 = arquant2[d]
+            d = int((a//2) - 1)
+            copiaesp1 = str(aresp2[d])
+            copiatipo1 = str(artipo2[d])
+            copiaproduto1 = str(arproduto2[d])
+            copiaquant1 = int(arquant2[d])
         print('Para qual espaço será movido ?')
         while True:
             try:
@@ -90,19 +90,43 @@ def corredores():
             except ValueError:
                 print("Por favor, digite um número válido.")
         if b % 2 != 0:
-            e = b // 2
-            copiaesp2 = aresp[e]
-            copiatipo2 = artipo[e]
-            copiaproduto2 = arproduto[e]
-            copiaquant2 = arquant[e]
+            e = int(b // 2)
+            copiaesp2 = str(aresp[e])
+            copiatipo2 = str(artipo[e])
+            copiaproduto2 = str(arproduto[e])
+            copiaquant2 = int(arquant[e])
         elif b % 2 == 0:
-            e = (b / 2) - 1
-            copiaesp2 = aresp2[e]
-            copiatipo2 = artipo2[e]
-            copiaproduto2 = arproduto2[e]
-            copiaquant2 = arquant2[e]
-        #Inverta os valores e faça um sistema de salvamento ---------
-
+            e = int((b // 2) - 1)
+            copiaesp2 = str(aresp2[e])
+            copiatipo2 = str(artipo2[e])
+            copiaproduto2 = str(arproduto2[e])
+            copiaquant2 = int(arquant2[e])
+        #inverte os valores e salva
+        if a % 2 != 0:
+            d = a // 2
+            aresp[d] = str(copiaesp2)
+            artipo[d] = str(copiatipo2)
+            arproduto[d] = str(copiaproduto2)
+            arquant[d] = int(copiaquant2)
+        elif a % 2 == 0:
+            d = (a//2) - 1
+            aresp2[d] = str(copiaesp2)
+            artipo2[d] = str(copiatipo2)
+            arproduto2[d] = str(copiaproduto2)
+            arquant2[d] = int(copiaquant2)
+        if b % 2 != 0:
+            e = b // 2
+            aresp[e] = str(copiaesp1)
+            artipo[e] = str(copiatipo1)
+            arproduto[e] = str(copiaproduto1)
+            arquant[e] = int(copiaquant1)
+        elif b % 2 == 0:
+            e = (b // 2) - 1
+            aresp2[e] = str(copiaesp1)
+            artipo2[e] = str(copiatipo1)
+            arproduto2[e] = str(copiaproduto1)
+            arquant2[e] = int(copiaquant1)
+        salvar_dados(aresp, aresp2, artipo, artipo2, arproduto, arproduto2, arquant, arquant2)
         sleep(2)
         print('Mudança realizada !')
         corredores()
@@ -153,16 +177,29 @@ o')
         jogo_tl_i.painelinicial()
 
 
-def salvar_dados(ar):
+def salvar_dados(aresp, aresp2, artipo, artipo2, arproduto, arproduto2, arquant, arquant2):
     # Lê o conteúdo atual do arquivo 'dados_game.py'
     with open('../SuperMarketGame/dados_game.py', 'r') as arquivo:
         linhas = arquivo.readlines()
     # Abre o arquivo 'dados_game.py' em modo de escrita
     with open('../SuperMarketGame/dados_game.py', 'w') as arquivo:
         for linha in linhas:
-            # Atualiza a linha que contém a lista 'p'
-            if linha.startswith('ar ='):
-                arquivo.write("ar = [{}]\n".format(', '.join(map(str, ar))))  # Salva a lista 'p' atualizada
+            if linha.startswith('aresp ='):
+                arquivo.write("aresp = {}\n".format(aresp))  # Sem join
+            elif linha.startswith('artipo ='):
+                arquivo.write("artipo = {}\n".format(artipo))  # Sem join
+            elif linha.startswith('arproduto ='):
+                arquivo.write("arproduto = {}\n".format(arproduto))  # Sem join
+            elif linha.startswith('arquant ='):
+                arquivo.write("arquant = {}\n".format(arquant))  # Sem join
+            elif linha.startswith('aresp2 ='):
+                arquivo.write("aresp2 = {}\n".format(aresp2))  # Sem join
+            elif linha.startswith('artipo2 ='):
+                arquivo.write("artipo2 = {}\n".format(artipo2))  # Sem join
+            elif linha.startswith('arproduto2 ='):
+                arquivo.write("arproduto2 = {}\n".format(arproduto2))  # Sem join
+            elif linha.startswith('arquant2 ='):
+                arquivo.write("arquant2 = {}\n".format(arquant2))  # Sem join
             else:
                 arquivo.write(linha)  # Mantém as outras linhas inalteradas
 
