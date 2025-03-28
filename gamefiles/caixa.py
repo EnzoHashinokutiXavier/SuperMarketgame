@@ -19,6 +19,7 @@ def caixa():
             if r == '1' or r == '2' or r == '3' or r == '4':
                 x = 'true'
         if r == '1':
+            """ 
             from dados_game import p, q
             produtos = ['Maçã', 'Pêra', 'Banana', 'Tomate', 'Alface', 'Batata', 'C.Cola2L']
             unidades = ['kg', 'kg', 'kg', 'kg', 'kg', 'kg', 'frd']
@@ -30,9 +31,11 @@ def caixa():
                                                              preco_unidade))
             x = input('Voltar = enter')
             caixa()
+            """
         elif r == '2':
             alterarpreco()
         elif r == '3':
+            """ 
             produtos = ['Maçã', 'Pêra', 'Banana', 'Tomate', 'Alface', 'Batata', 'C.Cola2L']
             unidades = ['kg', 'kg', 'kg', 'kg', 'kg', 'kg', 'frd']
             from dados_game import l_precos
@@ -41,6 +44,7 @@ def caixa():
                 print('|{:^9}|{:^18}|'.format(produtos[c], '{}/{}'.format(l_precos[c], unidades[c])))
             x = input('Voltar = enter')
             caixa()
+            """
         elif r == '4':
             from gamefiles import jogo_tl_i
             jogo_tl_i.painelinicial()
@@ -107,7 +111,8 @@ def caixa():
         jogo_tl_i.painelinicial()
 
 
-def alterarpreco():
+""""
+def alterarpreco():                #Mude para nova forma
     from dados_game import p
     from time import sleep
     print('Qual preço deseja alterar ?\n[1]Maçã : {}/kg\n[2]Pêra : {}/kg\n[3]Banana : {}/kg\n[4]Tomate : {}/kg\
@@ -160,7 +165,7 @@ def salvar_dados(p):
                 arquivo.write("p = [{}]\n".format(', '.join(map(str, p))))  # Salva a lista 'p' atualizada
             else:
                 arquivo.write(linha)  # Mantém as outras linhas inalteradas
-
+"""
 
 def salvar_compra(dinheiro, quant_encomendas_disponiveis, encomendas, entrega):
     with open('../SuperMarketGame/dados_game.py', 'r') as arquivo:

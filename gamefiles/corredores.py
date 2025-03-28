@@ -4,7 +4,7 @@ from time import sleep
 
 def corredores():
     print('\033[1;33;40m{:-^60}\033[m'.format('Corredores'))
-    print('[1]Ver corredores\n[2]Mover prateleiras\n[3]Examinar sujeira\n[4]Voltar')
+    print('[1]Ver corredores\n[2]Mover prateleiras\n[3]Examinar sujeira\n[4]Mover prateleira ao estoque\n[5]Voltar')
     x = 'false'
     r = 0
     while x != 'true':
@@ -173,7 +173,7 @@ o')
             corredores()
         elif r == '3':
             corredores()
-    elif r == '4':
+    elif r == '5':
         jogo_tl_i.painelinicial()
 
 
