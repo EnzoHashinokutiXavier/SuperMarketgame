@@ -125,14 +125,6 @@ def estoque():
             print('Nenhum espaço livre encontrado, compre um freezer !')
             sleep(2)
             estoque()
-
-
-
-
-
-            
-
-
     elif r == '3':
         if estoque_livre == estoque_limite:
             print('Não há itens no estoque !')
